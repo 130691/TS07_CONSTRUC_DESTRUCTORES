@@ -1,0 +1,22 @@
+class Persona:
+    def __init__(self, nombre, edad):
+        # Constructor: Inicializa los atributos del objeto
+        self.nombre = nombre
+        self.edad = edad
+        print(f"Se ha creado una nueva persona llamada {self.nombre}.")
+
+    def __del__(self):
+        # Destructor: Realiza tareas de limpieza o cierre de recursos (en este caso, solo imprime un mensaje)
+        print(f"{self.nombre} se está destruyendo. Adiós.")
+
+# Crear instancias de la clase Persona
+persona1 = Persona("Juan", 30)
+persona2 = Persona("María", 25)
+
+# Imprimir información de las personas
+print(f"{persona1.nombre} tiene {persona1.edad} años.")
+print(f"{persona2.nombre} tiene {persona2.edad} años.")
+
+# Eliminar referencias a las instancias (provoca la llamada a __del__)
+del persona1
+del persona2
